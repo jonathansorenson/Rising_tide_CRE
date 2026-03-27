@@ -69,15 +69,15 @@ export function LocalBusinessJsonLd() {
             "@type": "GeoCircle",
             geoMidpoint: {
               "@type": "GeoCoordinates",
-              latitude: 28.0836,
-              longitude: -80.6081,
+              latitude: 26.7153,
+              longitude: -80.0534,
             },
             geoRadius: "50000",
           },
         ],
         serviceArea: {
           "@type": "AdministrativeArea",
-          name: "Space Coast, Florida",
+          name: "Palm Beach County, Florida",
         },
       }}
     />

@@ -22,7 +22,7 @@ export default function PortfolioPage() {
       <Hero
         tagline="Our Portfolio"
         title="Commercial Assets Under Management"
-        subtitle="Explore our portfolio of managed and acquired commercial properties across Florida's Space Coast."
+        subtitle="Explore our portfolio of managed and acquired commercial properties across South Florida's Palm Beach County."
         compact
       />
 

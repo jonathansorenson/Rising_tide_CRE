@@ -2,23 +2,23 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Rocket, Users, TrendingUp, Building } from "lucide-react";
+import { Building2, Users, TrendingUp, Building } from "lucide-react";
 
 const marketHighlights = [
   {
-    icon: Rocket,
-    title: "Aerospace Hub",
-    description: "Home to SpaceX, Blue Origin, L3Harris, and Northrop Grumman",
+    icon: Building2,
+    title: "Wealth Migration Hub",
+    description: "Major influx of high-net-worth individuals and businesses relocating to Palm Beach County",
   },
   {
     icon: Users,
     title: "Population Growth",
-    description: "One of the fastest-growing metro areas in the United States",
+    description: "One of the fastest-growing metro areas in South Florida",
   },
   {
     icon: TrendingUp,
-    title: "Job Growth",
-    description: "High-wage STEM employment driving housing and commercial demand",
+    title: "Economic Engine",
+    description: "Financial services, healthcare, and technology driving commercial demand",
   },
   {
     icon: Building,
@@ -43,13 +43,13 @@ export function MarketTeaser() {
               Market Thesis
             </p>
             <h2 className="text-display-sm md:text-display-md font-display text-slate-dark mb-6">
-              Florida&apos;s Space Coast
+              Palm Beach County
             </h2>
             <p className="text-charcoal-light text-lg leading-relaxed mb-8">
-              The Space Coast is experiencing a generational growth cycle driven
-              by aerospace, defense, and technology employers. Rising Tide CRE
-              is strategically positioned to capitalize on this momentum across
-              every property type and service line.
+              Palm Beach County is experiencing a generational growth cycle driven
+              by wealth migration, business relocation, and infrastructure
+              investment. Rising Tide CRE is strategically positioned to capitalize
+              on this momentum across every property type and service line.
             </p>
             <Link
               href="/market"

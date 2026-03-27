@@ -79,39 +79,35 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                {SITE_CONFIG.email && (
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Mail className="w-5 h-5 text-gold" />
-                    </div>
-                    <div>
-                      <p className="font-medium text-slate-dark">Email</p>
-                      <a
-                        href={`mailto:${SITE_CONFIG.email}`}
-                        className="text-charcoal-light text-sm mt-1 hover:text-gold transition-colors"
-                      >
-                        {SITE_CONFIG.email}
-                      </a>
-                    </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-5 h-5 text-gold" />
                   </div>
-                )}
+                  <div>
+                    <p className="font-medium text-slate-dark">Jonathan Sorenson</p>
+                    <a
+                      href="mailto:jsorenson@risingtidecre.com"
+                      className="text-charcoal-light text-sm mt-1 hover:text-gold transition-colors"
+                    >
+                      jsorenson@risingtidecre.com
+                    </a>
+                  </div>
+                </div>
 
-                {SITE_CONFIG.phone && (
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Phone className="w-5 h-5 text-gold" />
-                    </div>
-                    <div>
-                      <p className="font-medium text-slate-dark">Phone</p>
-                      <a
-                        href={`tel:${SITE_CONFIG.phone}`}
-                        className="text-charcoal-light text-sm mt-1 hover:text-gold transition-colors"
-                      >
-                        {SITE_CONFIG.phone}
-                      </a>
-                    </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-5 h-5 text-gold" />
                   </div>
-                )}
+                  <div>
+                    <p className="font-medium text-slate-dark">Nicholas West</p>
+                    <a
+                      href="mailto:nwest@risingtidecre.com"
+                      className="text-charcoal-light text-sm mt-1 hover:text-gold transition-colors"
+                    >
+                      nwest@risingtidecre.com
+                    </a>
+                  </div>
+                </div>
               </div>
 
               {/* Map placeholder */}

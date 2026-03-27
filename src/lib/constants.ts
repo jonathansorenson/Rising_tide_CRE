@@ -2,17 +2,17 @@ export const SITE_CONFIG = {
   name: "Rising Tide CRE",
   tagline: "Real Assets. Real Operations. Real Results.",
   description:
-    "Rising Tide CRE is a vertically integrated commercial real estate firm operating across property management, acquisitions, and leasing in Florida's Space Coast and select growth markets.",
-  url: "https://risingtidepg.com",
+    "Rising Tide CRE is a vertically integrated commercial real estate firm operating across property management, acquisitions, and leasing in South Florida's Palm Beach County.",
+  url: "https://risingtidecre.com",
   ogImage: "/api/og",
   phone: "",
-  email: "info@risingtidepg.com",
+  email: "",
   address: {
     street: "",
-    city: "Melbourne",
+    city: "Palm Beach County",
     state: "FL",
     zip: "",
-    full: "Melbourne, FL",
+    full: "Palm Beach County, FL",
   },
   social: {
     linkedin: "https://linkedin.com/company/rising-tide-cre",
@@ -45,7 +45,7 @@ export const SERVICE_PILLARS = [
   {
     slug: "leasing",
     title: "Leasing",
-    shortDescription: "Expert tenant and landlord representation with deep Space Coast market knowledge.",
+    shortDescription: "Expert tenant and landlord representation with deep Palm Beach County market knowledge.",
     icon: "Key",
   },
 ] as const;
@@ -59,23 +59,18 @@ export const METRICS = [
 
 export const TEAM_MEMBERS = [
   {
-    name: "Nicholas White",
-    title: "Founder",
-    image: "/team/nicholas-white.jpg",
+    name: "Jonathan Sorenson",
+    title: "",
+    email: "jsorenson@risingtidecre.com",
+    image: "/team/jonathan-sorenson.jpg",
     linkedin: "",
     bio: "",
   },
   {
     name: "Nicholas West",
-    title: "Vice President",
+    title: "",
+    email: "nwest@risingtidecre.com",
     image: "/team/nicholas-west.jpg",
-    linkedin: "",
-    bio: "",
-  },
-  {
-    name: "Jonathan Sorenson",
-    title: "Director of Operations",
-    image: "/team/jonathan-sorenson.jpg",
     linkedin: "",
     bio: "",
   },
@@ -102,9 +97,9 @@ export const PLACEHOLDER_PROPERTIES = [
   },
   {
     id: "2",
-    name: "Space Coast Industrial Park",
+    name: "Jupiter Industrial Park",
     type: "Industrial" as const,
-    location: "Melbourne, FL",
+    location: "Jupiter, FL",
     sf: 120000,
     status: "active" as const,
     image: "/properties/placeholder-2.jpg",
@@ -112,9 +107,9 @@ export const PLACEHOLDER_PROPERTIES = [
   },
   {
     id: "3",
-    name: "Brevard Professional Plaza",
+    name: "Royal Palm Professional Plaza",
     type: "Office" as const,
-    location: "Cocoa Beach, FL",
+    location: "West Palm Beach, FL",
     sf: 28000,
     status: "active" as const,
     image: "/properties/placeholder-3.jpg",

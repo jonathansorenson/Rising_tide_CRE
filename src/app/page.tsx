@@ -20,7 +20,7 @@ export default function HomePage() {
       <Hero
         tagline="Management  |  Acquisitions  |  Leasing"
         title="Real Assets. Real Operations. Real Results."
-        subtitle="Rising Tide CRE is a vertically integrated commercial real estate firm operating across Florida's Space Coast and select growth markets."
+        subtitle="Rising Tide CRE is a vertically integrated commercial real estate firm operating across South Florida's Palm Beach County."
         primaryCTA={{ label: "Explore Our Services", href: "/services" }}
         secondaryCTA={{ label: "Join Our Team", href: "/careers" }}
       />

@@ -22,7 +22,7 @@ export function Footer() {
             <p className="text-sm leading-relaxed mt-4">
               A vertically integrated commercial real estate firm operating
               across property management, acquisitions, and leasing in
-              Florida&apos;s Space Coast.
+              South Florida&apos;s Palm Beach County.
             </p>
           </div>
 
@@ -81,26 +81,22 @@ export function Footer() {
             </h3>
             <ul className="space-y-3 text-sm">
               <li>{SITE_CONFIG.address.full}</li>
-              {SITE_CONFIG.email && (
-                <li>
-                  <a
-                    href={`mailto:${SITE_CONFIG.email}`}
-                    className="hover:text-gold transition-colors"
-                  >
-                    {SITE_CONFIG.email}
-                  </a>
-                </li>
-              )}
-              {SITE_CONFIG.phone && (
-                <li>
-                  <a
-                    href={`tel:${SITE_CONFIG.phone}`}
-                    className="hover:text-gold transition-colors"
-                  >
-                    {SITE_CONFIG.phone}
-                  </a>
-                </li>
-              )}
+              <li>
+                <a
+                  href="mailto:jsorenson@risingtidecre.com"
+                  className="hover:text-gold transition-colors"
+                >
+                  jsorenson@risingtidecre.com
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:nwest@risingtidecre.com"
+                  className="hover:text-gold transition-colors"
+                >
+                  nwest@risingtidecre.com
+                </a>
+              </li>
               <li className="pt-2">
                 <Link
                   href="/careers"

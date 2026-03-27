@@ -16,7 +16,7 @@ const services = {
       {
         title: "What We Manage",
         content:
-          "Rising Tide CRE manages a diverse portfolio of commercial properties across Florida's Space Coast — including retail centers, industrial facilities, flex spaces, office buildings, and multifamily communities. Every property benefits from the same institutional-grade processes and hands-on attention.",
+          "Rising Tide CRE manages a diverse portfolio of commercial properties across South Florida's Palm Beach County — including retail centers, industrial facilities, flex spaces, office buildings, and multifamily communities. Every property benefits from the same institutional-grade processes and hands-on attention.",
       },
       {
         title: "Tenant Relations",
@@ -56,12 +56,12 @@ const services = {
       {
         title: "Investment Thesis",
         content:
-          "Rising Tide CRE targets commercial properties in high-growth Florida markets where aerospace, defense, and technology employment are driving demand. We focus on assets where our operational expertise can unlock value — through better management, repositioning, or lease-up.",
+          "Rising Tide CRE targets commercial properties in high-growth South Florida markets where wealth migration, business relocation, and infrastructure investment are driving demand. We focus on assets where our operational expertise can unlock value — through better management, repositioning, or lease-up.",
       },
       {
         title: "Acquisition Criteria",
         content:
-          "We evaluate retail, industrial, flex, office, and multifamily properties across Brevard County and select Florida growth markets. Our sweet spot is value-add and core-plus assets where hands-on management and market knowledge create a competitive edge.",
+          "We evaluate retail, industrial, flex, office, and multifamily properties across Palm Beach County and select South Florida growth markets. Our sweet spot is value-add and core-plus assets where hands-on management and market knowledge create a competitive edge.",
       },
       {
         title: "Underwriting Process",
@@ -76,7 +76,7 @@ const services = {
     ],
     cta: {
       title: "Have a Deal to Discuss?",
-      subtitle: "We're always evaluating new acquisition opportunities across Florida's Space Coast and select growth markets.",
+      subtitle: "We're always evaluating new acquisition opportunities across Palm Beach County and South Florida growth markets.",
       primaryCTA: { label: "Submit a Deal", href: "/contact" },
       secondaryCTA: { label: "Our Market Thesis", href: "/market" },
     },
@@ -86,12 +86,12 @@ const services = {
     heroTagline: "Leasing",
     heroTitle: "Deep Market Knowledge. Stronger Lease Outcomes.",
     heroSubtitle:
-      "Expert tenant and landlord representation across Florida's Space Coast — powered by our integrated management and investment perspective.",
+      "Expert tenant and landlord representation across South Florida's Palm Beach County — powered by our integrated management and investment perspective.",
     sections: [
       {
         title: "Tenant Representation",
         content:
-          "Whether you're a national retailer, a growing technology firm, or a local business expanding operations, Rising Tide CRE's leasing team provides strategic site selection, market analysis, and lease negotiation expertise tailored to Florida's Space Coast market.",
+          "Whether you're a national retailer, a growing technology firm, or a local business expanding operations, Rising Tide CRE's leasing team provides strategic site selection, market analysis, and lease negotiation expertise tailored to Palm Beach County's market.",
       },
       {
         title: "Landlord Representation",
@@ -101,7 +101,7 @@ const services = {
       {
         title: "Market Knowledge",
         content:
-          "Rising Tide CRE maintains deep relationships across Brevard County's commercial real estate ecosystem — brokers, tenants, landlords, economic development organizations, and municipal stakeholders. Our leasing team operates with a market knowledge advantage that comes from managing properties in these same communities.",
+          "Rising Tide CRE maintains deep relationships across Palm Beach County's commercial real estate ecosystem — brokers, tenants, landlords, economic development organizations, and municipal stakeholders. Our leasing team operates with a market knowledge advantage that comes from managing properties in these same communities.",
       },
       {
         title: "Current Availabilities",
@@ -111,7 +111,7 @@ const services = {
     ],
     cta: {
       title: "Looking for Space?",
-      subtitle: "Our leasing team can help you find the right commercial space on Florida's Space Coast.",
+      subtitle: "Our leasing team can help you find the right commercial space in Palm Beach County.",
       primaryCTA: { label: "View Available Spaces", href: "/portfolio" },
       secondaryCTA: { label: "Contact Leasing", href: "/contact" },
     },

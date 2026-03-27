@@ -15,20 +15,20 @@ const posts: Record<string, {
   date: string;
   dateISO: string;
 }> = {
-  "space-coast-market-q1-2026": {
-    title: "Space Coast Market Update: Q1 2026",
-    excerpt: "Population growth, aerospace expansion, and commercial real estate trends across Brevard County heading into 2026.",
+  "palm-beach-market-q1-2026": {
+    title: "Palm Beach County Market Update: Q1 2026",
+    excerpt: "Population growth, wealth migration, and commercial real estate trends across Palm Beach County heading into 2026.",
     content: `
-      <p>The Space Coast commercial real estate market continues to demonstrate exceptional momentum heading into 2026. Driven by sustained aerospace and defense employer expansion, population migration, and limited new supply, the fundamentals across Brevard County's commercial property sectors remain compelling.</p>
+      <p>The Palm Beach County commercial real estate market continues to demonstrate exceptional momentum heading into 2026. Driven by sustained wealth migration, business relocations, and infrastructure investment, the fundamentals across Palm Beach County's commercial property sectors remain compelling.</p>
 
-      <h2>Aerospace Employment Continues to Climb</h2>
-      <p>SpaceX's Starlink manufacturing operations and Blue Origin's New Glenn production facility continue to drive high-wage job creation across the region. L3Harris Technologies, headquartered in Melbourne, has expanded its campus footprint, further solidifying the Space Coast as a premier defense technology hub.</p>
+      <h2>Economic Growth Continues to Accelerate</h2>
+      <p>Financial services firms, family offices, and corporate relocations from the Northeast continue to drive high-wage job creation across the region. The Brightline high-speed rail connection has further enhanced Palm Beach County's appeal as a business destination, connecting it seamlessly to Miami and Fort Lauderdale.</p>
 
       <h2>Commercial Real Estate Performance</h2>
       <p>Industrial vacancy remains below 5% across the market, with asking rents climbing 8% year-over-year. Retail occupancy in well-located neighborhood and community centers has strengthened, supported by population growth and rising household incomes. Office demand has stabilized with particular strength in Class A and flex/creative space.</p>
 
       <h2>Outlook</h2>
-      <p>Rising Tide CRE remains bullish on the Space Coast's commercial real estate trajectory. The combination of employment growth, population influx, infrastructure investment, and constrained supply creates a favorable environment for operators who understand these markets at the ground level.</p>
+      <p>Rising Tide CRE remains bullish on Palm Beach County's commercial real estate trajectory. The combination of wealth migration, population influx, infrastructure investment, and constrained supply creates a favorable environment for operators who understand these markets at the ground level.</p>
     `,
     category: "Market Update",
     author: "Rising Tide CRE",
@@ -51,21 +51,21 @@ const posts: Record<string, {
       <p>Each service line makes the others stronger. Management insights improve acquisitions. Acquisition activity creates management opportunities. Leasing relationships inform both. Over time, this creates a compounding information advantage that simply cannot be replicated by firms operating in a single lane.</p>
     `,
     category: "Thought Leadership",
-    author: "Nicholas White",
+    author: "Rising Tide CRE",
     date: "February 2026",
     dateISO: "2026-02-15",
   },
   "life-at-rising-tide": {
     title: "Life at Rising Tide: Building a Career in CRE",
-    excerpt: "What it's like to work at a vertically integrated CRE firm on Florida's Space Coast.",
+    excerpt: "What it's like to work at a vertically integrated CRE firm in South Florida's Palm Beach County.",
     content: `
       <p>When I joined Rising Tide CRE, I expected a focused role in operations. What I found was something different — an environment where every team member gets exposure to the full spectrum of commercial real estate, from underwriting potential acquisitions to managing tenant relationships to supporting leasing efforts.</p>
 
       <h2>Cross-Functional by Design</h2>
       <p>In a typical week, I might review property financial statements in the morning, join an acquisition walkthrough in the afternoon, and coordinate a lease negotiation the next day. This isn't because we're understaffed — it's by design. Rising Tide's vertically integrated model means that understanding the full picture isn't optional; it's the job.</p>
 
-      <h2>The Space Coast Advantage</h2>
-      <p>Working in CRE on Florida's Space Coast has a unique energy. You can watch a SpaceX launch from the office parking lot, then walk into a meeting about a tenant who manufactures satellite components. The connection between the economic engine driving this region and the properties we manage is tangible and exciting.</p>
+      <h2>The Palm Beach County Advantage</h2>
+      <p>Working in CRE in Palm Beach County has a unique energy. The influx of wealth, businesses, and talent relocating to the area creates a dynamic market with constant opportunity. The connection between the economic engine driving this region and the properties we manage is tangible and exciting.</p>
 
       <h2>Growing with the Company</h2>
       <p>What sets Rising Tide apart as an employer is the commitment to developing well-rounded CRE professionals. The mentorship, the cross-functional exposure, and the opportunity to work on meaningful projects early in your career — it's the kind of professional development that accelerates growth in ways a larger, more siloed firm simply cannot.</p>
@@ -91,7 +91,7 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
     type: "article",
     publishedTime: post.dateISO,
     author: post.author,
-    keywords: [post.category, "Rising Tide CRE", "Space Coast CRE"],
+    keywords: [post.category, "Rising Tide CRE", "Palm Beach County CRE"],
   });
 }
 

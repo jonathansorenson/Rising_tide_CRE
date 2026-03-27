@@ -5,9 +5,9 @@ import { Hero } from "@/components/sections/Hero";
 import { CTABanner } from "@/components/sections/CTABanner";
 import { SectionHeader } from "@/components/sections/SectionHeader";
 import {
-  Rocket,
-  Plane,
-  Shield,
+  Building2,
+  Landmark,
+  HeartPulse,
   Cpu,
   Users,
   TrendingUp,
@@ -16,36 +16,36 @@ import {
 } from "lucide-react";
 
 const employers = [
-  { name: "SpaceX", icon: Rocket, description: "Launch operations, Starlink manufacturing" },
-  { name: "Blue Origin", icon: Rocket, description: "New Glenn rocket production facility" },
-  { name: "L3Harris Technologies", icon: Shield, description: "Defense electronics & communications HQ" },
-  { name: "Northrop Grumman", icon: Plane, description: "Aerospace systems & defense" },
-  { name: "Lockheed Martin", icon: Shield, description: "Space systems & missile defense" },
-  { name: "Leonardo DRS", icon: Cpu, description: "Advanced defense electronics" },
+  { name: "NextEra Energy", icon: Building2, description: "Fortune 200 energy company HQ" },
+  { name: "FPL Group", icon: Building2, description: "Florida's largest electric utility" },
+  { name: "Scripps Research", icon: HeartPulse, description: "World-class biomedical research institute" },
+  { name: "Max Planck Institute", icon: HeartPulse, description: "Neuroscience research campus" },
+  { name: "Financial Services Hub", icon: Landmark, description: "Major banks, hedge funds, and family offices" },
+  { name: "Tech & Innovation", icon: Cpu, description: "Growing technology and startup ecosystem" },
 ];
 
 const marketStats = [
-  { label: "Population Growth (2020-2025)", value: "+12.3%", icon: Users },
-  { label: "Job Growth Rate", value: "+4.2% YoY", icon: TrendingUp },
-  { label: "CRE Investment Volume", value: "$1.8B+", icon: Building },
-  { label: "Average Wage Growth", value: "+6.1% YoY", icon: TrendingUp },
+  { label: "Population Growth (2020-2025)", value: "+9.8%", icon: Users },
+  { label: "Median Household Income", value: "$75K+", icon: TrendingUp },
+  { label: "CRE Investment Volume", value: "$2.4B+", icon: Building },
+  { label: "Average Wage Growth", value: "+5.7% YoY", icon: TrendingUp },
 ];
 
 const growthDrivers = [
   {
-    title: "Aerospace & Defense Expansion",
+    title: "Wealth & Business Migration",
     content:
-      "SpaceX's Starlink manufacturing, Blue Origin's New Glenn facility, and continued defense modernization are driving thousands of high-wage jobs to the Space Coast. These employers create downstream demand for housing, retail, and commercial services.",
+      "Palm Beach County continues to attract high-net-worth individuals, family offices, and corporate relocations from the Northeast and Midwest. This migration is driving demand across all commercial property types — from Class A office to luxury retail and multifamily.",
   },
   {
-    title: "Population & Migration Influx",
+    title: "Population & Demographic Growth",
     content:
-      "Brevard County is one of the fastest-growing metro areas in the U.S., benefiting from Florida's tax advantages, quality of life, and remote-work migration patterns that accelerated post-2020.",
+      "Palm Beach County is one of the fastest-growing counties in South Florida, benefiting from Florida's tax advantages, quality of life, and remote-work migration patterns that accelerated post-2020.",
   },
   {
     title: "Infrastructure Investment",
     content:
-      "Significant public and private infrastructure investment — including port expansion, road improvements, and educational facilities — is creating a virtuous cycle of growth that supports commercial real estate demand across all property types.",
+      "Significant public and private infrastructure investment — including Brightline high-speed rail, port expansion, and educational facilities — is creating a virtuous cycle of growth that supports commercial real estate demand across all property types.",
   },
   {
     title: "Limited Supply, Growing Demand",
@@ -59,8 +59,8 @@ export default function MarketPage() {
     <>
       <Hero
         tagline="Market Thesis"
-        title="Florida's Space Coast"
-        subtitle="A generational growth cycle driven by aerospace, defense, and technology — creating exceptional commercial real estate opportunity."
+        title="Palm Beach County"
+        subtitle="A generational growth cycle driven by wealth migration, business relocation, and infrastructure investment — creating exceptional commercial real estate opportunity."
         compact
       />
 
@@ -93,7 +93,7 @@ export default function MarketPage() {
         <div className="container-wide mx-auto">
           <SectionHeader
             tagline="Growth Thesis"
-            title="Why the Space Coast"
+            title="Why Palm Beach County"
             subtitle="Multiple converging growth drivers are creating a once-in-a-generation commercial real estate opportunity."
           />
 
@@ -124,8 +124,8 @@ export default function MarketPage() {
         <div className="container-wide mx-auto">
           <SectionHeader
             tagline="Economic Engine"
-            title="Major Employers"
-            subtitle="The Space Coast's commercial real estate demand is anchored by world-class aerospace, defense, and technology employers."
+            title="Major Employers & Institutions"
+            subtitle="Palm Beach County's commercial real estate demand is anchored by Fortune 500 companies, world-class research institutions, and a thriving financial services sector."
           />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -158,8 +158,8 @@ export default function MarketPage() {
         <div className="container-wide mx-auto text-center">
           <SectionHeader
             tagline="Geography"
-            title="Space Coast Market Area"
-            subtitle="Melbourne, Palm Bay, Cocoa Beach, Titusville, and surrounding communities in Brevard County, Florida."
+            title="Palm Beach County Market Area"
+            subtitle="West Palm Beach, Palm Beach Gardens, Jupiter, Boca Raton, Delray Beach, and surrounding communities in Palm Beach County, Florida."
             dark
           />
           <div className="bg-white/5 rounded-xl aspect-[2/1] flex items-center justify-center border border-cream/10">
@@ -175,7 +175,7 @@ export default function MarketPage() {
         <div className="container-narrow mx-auto text-center px-4">
           <Download className="w-10 h-10 text-gold mx-auto mb-4" />
           <h2 className="text-2xl font-display font-semibold text-slate-dark mb-3">
-            Space Coast Market Report
+            Palm Beach County Market Report
           </h2>
           <p className="text-charcoal-light mb-6">
             Download our comprehensive market report with detailed economic
@@ -188,8 +188,8 @@ export default function MarketPage() {
       </section>
 
       <CTABanner
-        title="Invest in the Space Coast"
-        subtitle="Rising Tide CRE is actively acquiring and managing commercial properties across Florida's fastest-growing market."
+        title="Invest in Palm Beach County"
+        subtitle="Rising Tide CRE is actively acquiring and managing commercial properties across South Florida's fastest-growing market."
         primaryCTA={{ label: "Explore Opportunities", href: "/contact" }}
         secondaryCTA={{ label: "View Portfolio", href: "/portfolio" }}
       />

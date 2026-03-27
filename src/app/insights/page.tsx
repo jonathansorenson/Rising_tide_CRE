@@ -10,10 +10,10 @@ export const metadata = generatePageMetadata(PAGE_SEO.insights);
 // Placeholder blog posts — will be replaced with MDX content
 const posts = [
   {
-    slug: "space-coast-market-q1-2026",
-    title: "Space Coast Market Update: Q1 2026",
+    slug: "palm-beach-market-q1-2026",
+    title: "Palm Beach County Market Update: Q1 2026",
     excerpt:
-      "Population growth, aerospace expansion, and commercial real estate trends across Brevard County heading into 2026.",
+      "Population growth, wealth migration, and commercial real estate trends across Palm Beach County heading into 2026.",
     category: "Market Update",
     author: "Rising Tide CRE",
     date: "March 2026",
@@ -33,7 +33,7 @@ const posts = [
     slug: "life-at-rising-tide",
     title: "Life at Rising Tide: Building a Career in CRE",
     excerpt:
-      "What it's like to work at a vertically integrated CRE firm — from underwriting deals to managing tenant relationships across the Space Coast.",
+      "What it's like to work at a vertically integrated CRE firm — from underwriting deals to managing tenant relationships across Palm Beach County.",
     category: "Team Spotlight",
     author: "Jonathan Sorenson",
     date: "January 2026",
@@ -138,7 +138,7 @@ export default function InsightsPage() {
 
       <CTABanner
         title="Stay Informed"
-        subtitle="Get Space Coast market updates, deal insights, and thought leadership delivered to your inbox."
+        subtitle="Get Palm Beach County market updates, deal insights, and thought leadership delivered to your inbox."
         primaryCTA={{ label: "Contact Us", href: "/contact" }}
       />
     </>

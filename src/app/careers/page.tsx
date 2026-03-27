@@ -21,7 +21,7 @@ const openPositions = [
   {
     title: "Property Manager",
     department: "Management",
-    location: "Melbourne, FL",
+    location: "Palm Beach County, FL",
     type: "Full-time",
     description:
       "Oversee day-to-day operations for a portfolio of commercial properties, including tenant relations, maintenance coordination, and financial reporting.",
@@ -29,7 +29,7 @@ const openPositions = [
   {
     title: "Acquisitions Analyst",
     department: "Acquisitions",
-    location: "Melbourne, FL",
+    location: "Palm Beach County, FL",
     type: "Full-time",
     description:
       "Support the acquisitions team with financial modeling, market research, due diligence, and deal underwriting for commercial real estate opportunities.",
@@ -37,7 +37,7 @@ const openPositions = [
   {
     title: "Leasing Associate",
     department: "Leasing",
-    location: "Melbourne, FL",
+    location: "Palm Beach County, FL",
     type: "Full-time",
     description:
       "Drive leasing activity across the portfolio — prospect tenants, negotiate terms, and manage the lease execution process from LOI to move-in.",
@@ -250,7 +250,7 @@ export default function CareersPage() {
 
       <CTABanner
         title="Ready to Make Your Move?"
-        subtitle="Join a team that's building the future of commercial real estate on Florida's Space Coast."
+        subtitle="Join a team that's building the future of commercial real estate in South Florida's Palm Beach County."
         primaryCTA={{ label: "View Open Positions", href: "#positions" }}
         secondaryCTA={{ label: "Contact Us", href: "/contact" }}
       />

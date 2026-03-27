@@ -8,18 +8,18 @@ import { TEAM_MEMBERS } from "@/lib/constants";
 import { User } from "lucide-react";
 
 const timeline = [
-  { year: "2010", title: "Founded", description: "Rising Tide established with a focus on Space Coast commercial real estate." },
+  { year: "2010", title: "Founded", description: "Rising Tide established with a focus on South Florida commercial real estate." },
   { year: "2014", title: "Management Launch", description: "Expanded into full-service property management operations." },
-  { year: "2017", title: "First Major Acquisition", description: "Completed first institutional-scale acquisition on Florida's Space Coast." },
+  { year: "2017", title: "First Major Acquisition", description: "Completed first institutional-scale acquisition in Palm Beach County." },
   { year: "2020", title: "Vertical Integration", description: "Unified management, acquisitions, and leasing under one platform." },
   { year: "2023", title: "CRElytic Platform", description: "Launched proprietary analytics technology for data-driven decision making." },
-  { year: "2025", title: "Market Expansion", description: "Expanded operations across select Florida growth markets." },
+  { year: "2025", title: "Market Expansion", description: "Expanded operations across Palm Beach County and South Florida growth markets." },
 ];
 
 const values = [
   { title: "Operational Excellence", description: "We manage every asset as if we own it — because we often do. Our management-first approach means better tenant experiences and stronger property performance." },
   { title: "Integrated Thinking", description: "Our three service lines don't operate in silos. Management insights inform acquisitions. Leasing intelligence shapes investment strategy. The integrated model creates compounding value." },
-  { title: "Market Conviction", description: "We are deeply committed to Florida's Space Coast and the high-growth markets where aerospace, defense, and technology are reshaping commercial real estate demand." },
+  { title: "Market Conviction", description: "We are deeply committed to South Florida's Palm Beach County and the high-growth markets where wealth migration, business relocation, and infrastructure investment are reshaping commercial real estate demand." },
   { title: "Team Development", description: "We invest in our people with cross-functional exposure, mentorship, and opportunities to grow across every facet of commercial real estate." },
 ];
 
@@ -29,7 +29,7 @@ export default function AboutPage() {
       <Hero
         tagline="About Us"
         title="Built to Operate. Driven to Grow."
-        subtitle="Rising Tide CRE is a vertically integrated commercial real estate firm — managing, acquiring, and leasing properties across Florida's fastest-growing markets."
+        subtitle="Rising Tide CRE is a vertically integrated commercial real estate firm — managing, acquiring, and leasing properties across South Florida's Palm Beach County."
         compact
       />
 
@@ -52,7 +52,7 @@ export default function AboutPage() {
               properties from the inside out. What began as a focused investment
               platform has evolved into a vertically integrated firm that
               manages, acquires, and leases commercial properties across
-              Florida&apos;s Space Coast and select growth markets.
+              South Florida&apos;s Palm Beach County.
             </p>
             <p>
               Our management-first approach means we know our assets at the
@@ -83,7 +83,7 @@ export default function AboutPage() {
             subtitle="Experienced operators, investors, and market specialists building the next generation of CRE."
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
             {TEAM_MEMBERS.map((member, i) => (
               <motion.div
                 key={member.name}
@@ -101,9 +101,6 @@ export default function AboutPage() {
                   <h3 className="text-lg font-semibold text-slate-dark">
                     {member.name}
                   </h3>
-                  <p className="text-gold text-sm font-medium mt-1">
-                    {member.title}
-                  </p>
                   {member.linkedin && (
                     <a
                       href={member.linkedin}
