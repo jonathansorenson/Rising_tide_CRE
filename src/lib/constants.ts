@@ -9,7 +9,7 @@ export const SITE_CONFIG = {
   email: "",
   address: {
     street: "",
-    city: "Palm Beach County",
+    city: "West Palm Beach",
     state: "FL",
     zip: "",
     full: "Palm Beach County, FL",

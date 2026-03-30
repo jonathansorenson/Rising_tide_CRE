@@ -193,4 +193,16 @@ export const PAGE_SEO = {
       "Palm Beach County market report",
     ],
   },
+  privacy: {
+    title: "Privacy Policy",
+    description:
+      "Rising Tide CRE's privacy policy — how we collect, use, and protect your information when you use our website and services.",
+    path: "/privacy",
+  },
+  terms: {
+    title: "Terms of Use",
+    description:
+      "Terms and conditions for using the Rising Tide CRE website, including disclaimers, intellectual property, and limitation of liability.",
+    path: "/terms",
+  },
 } as const;

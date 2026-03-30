@@ -13,6 +13,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/careers`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.9 },
     { url: `${baseUrl}/contact`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 },
     { url: `${baseUrl}/insights`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.7 },
+    { url: `${baseUrl}/privacy`, lastModified: new Date(), changeFrequency: "yearly" as const, priority: 0.3 },
+    { url: `${baseUrl}/terms`, lastModified: new Date(), changeFrequency: "yearly" as const, priority: 0.3 },
   ];
 
   const servicePages = SERVICE_PILLARS.map((service) => ({
@@ -30,7 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   const blogSlugs = [
-    "space-coast-market-q1-2026",
+    "palm-beach-market-q1-2026",
     "why-vertical-integration-matters",
     "life-at-rising-tide",
   ];

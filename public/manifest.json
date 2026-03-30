@@ -1,0 +1,16 @@
+{
+  "name": "Rising Tide CRE",
+  "short_name": "RTCRE",
+  "description": "Vertically integrated commercial real estate in Palm Beach County, FL",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F5F0E8",
+  "theme_color": "#1B2A3D",
+  "icons": [
+    {
+      "src": "/logos/RT_Icon 1000x1000.png",
+      "sizes": "1000x1000",
+      "type": "image/png"
+    }
+  ]
+}

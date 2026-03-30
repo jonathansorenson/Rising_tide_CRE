@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Hero } from "@/components/sections/Hero";
 import { CTABanner } from "@/components/sections/CTABanner";
+import { trackDownload } from "@/lib/analytics";
 import { SectionHeader } from "@/components/sections/SectionHeader";
 import {
   Building2,
@@ -181,7 +182,10 @@ export default function MarketPage() {
             Download our comprehensive market report with detailed economic
             data, demographic trends, and commercial real estate analysis.
           </p>
-          <button className="px-6 py-3 bg-gold hover:bg-gold-dark text-slate-dark font-semibold rounded-md transition-colors">
+          <button
+            onClick={() => trackDownload("palm-beach-county-market-report")}
+            className="px-6 py-3 bg-gold hover:bg-gold-dark text-slate-dark font-semibold rounded-md transition-colors"
+          >
             Download Market Report (PDF)
           </button>
         </div>

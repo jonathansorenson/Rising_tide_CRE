@@ -49,39 +49,43 @@ export function OrganizationJsonLd() {
 }
 
 export function LocalBusinessJsonLd() {
-  return (
-    <JsonLd
-      data={{
-        "@context": "https://schema.org",
-        "@type": "RealEstateAgent",
-        name: SITE_CONFIG.name,
-        url: SITE_CONFIG.url,
-        image: `${SITE_CONFIG.url}/logos/RT_Primary 2000x600.png`,
-        description: SITE_CONFIG.description,
-        address: {
-          "@type": "PostalAddress",
-          addressLocality: SITE_CONFIG.address.city,
-          addressRegion: SITE_CONFIG.address.state,
-          addressCountry: "US",
+  const address: Record<string, string> = {
+    "@type": "PostalAddress",
+    addressLocality: SITE_CONFIG.address.city,
+    addressRegion: SITE_CONFIG.address.state,
+    addressCountry: "US",
+  };
+  if (SITE_CONFIG.address.street) address.streetAddress = SITE_CONFIG.address.street;
+  if (SITE_CONFIG.address.zip) address.postalCode = SITE_CONFIG.address.zip;
+
+  const data: Record<string, unknown> = {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    name: SITE_CONFIG.name,
+    url: SITE_CONFIG.url,
+    image: `${SITE_CONFIG.url}/logos/RT_Primary 2000x600.png`,
+    description: SITE_CONFIG.description,
+    address,
+    areaServed: [
+      {
+        "@type": "GeoCircle",
+        geoMidpoint: {
+          "@type": "GeoCoordinates",
+          latitude: 26.7153,
+          longitude: -80.0534,
         },
-        areaServed: [
-          {
-            "@type": "GeoCircle",
-            geoMidpoint: {
-              "@type": "GeoCoordinates",
-              latitude: 26.7153,
-              longitude: -80.0534,
-            },
-            geoRadius: "50000",
-          },
-        ],
-        serviceArea: {
-          "@type": "AdministrativeArea",
-          name: "Palm Beach County, Florida",
-        },
-      }}
-    />
-  );
+        geoRadius: "50000",
+      },
+    ],
+    serviceArea: {
+      "@type": "AdministrativeArea",
+      name: "Palm Beach County, Florida",
+    },
+  };
+  if (SITE_CONFIG.phone) data.telephone = SITE_CONFIG.phone;
+  if (SITE_CONFIG.email) data.email = SITE_CONFIG.email;
+
+  return <JsonLd data={data} />;
 }
 
 export function WebSiteJsonLd() {
@@ -123,11 +127,15 @@ export function JobPostingJsonLd({
   description,
   datePosted,
   location,
+  employmentType = "FULL_TIME",
+  validThrough,
 }: {
   title: string;
   description: string;
   datePosted: string;
   location?: string;
+  employmentType?: string;
+  validThrough?: string;
 }) {
   return (
     <JsonLd
@@ -137,10 +145,13 @@ export function JobPostingJsonLd({
         title,
         description,
         datePosted,
+        employmentType,
+        ...(validThrough && { validThrough }),
         hiringOrganization: {
           "@type": "Organization",
           name: SITE_CONFIG.name,
           sameAs: SITE_CONFIG.url,
+          logo: `${SITE_CONFIG.url}/logos/RT_Icon 1000x1000.png`,
         },
         jobLocation: {
           "@type": "Place",

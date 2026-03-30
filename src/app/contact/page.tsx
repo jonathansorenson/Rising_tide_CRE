@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Hero } from "@/components/sections/Hero";
 import { Mail, MapPin, Send, CheckCircle } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/constants";
+import { trackFormSubmission } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 
 const inquiryTypes = [
@@ -39,6 +40,7 @@ export default function ContactPage() {
 
       if (res.ok) {
         setStatus("sent");
+        trackFormSubmission("contact");
         setFormData({ name: "", email: "", phone: "", company: "", inquiryType: "", message: "" });
       } else {
         setStatus("error");

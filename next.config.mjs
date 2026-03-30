@@ -5,9 +5,11 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      // Add 301 redirects from old risingtidepg.com paths here
-      // Example:
-      // { source: '/old-path', destination: '/new-path', permanent: true },
+      {
+        source: "/insights/space-coast-market-q1-2026",
+        destination: "/insights/palm-beach-market-q1-2026",
+        permanent: true,
+      },
     ];
   },
   async headers() {
@@ -16,6 +18,18 @@ const nextConfig = {
         source: "/(.*)",
         headers: [
           { key: "X-DNS-Prefetch-Control", value: "on" },
+        ],
+      },
+      {
+        source: "/_next/static/(.*)",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+        ],
+      },
+      {
+        source: "/logos/(.*)",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=2592000" },
         ],
       },
     ];
