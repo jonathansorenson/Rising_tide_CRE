@@ -47,7 +47,7 @@ export function Hero({
         <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-sage/5 rounded-full blur-3xl" />
       </div>
 
-      <div className="relative container-wide mx-auto px-4 sm:px-6 lg:px-8 py-32">
+      <div className="relative container-wide mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-32">
         <div className="max-w-3xl">
           {tagline && (
             <motion.p

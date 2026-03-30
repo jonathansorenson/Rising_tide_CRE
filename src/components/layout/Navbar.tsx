@@ -31,10 +31,10 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b",
         isScrolled
-          ? "bg-slate-dark/95 backdrop-blur-md shadow-lg"
-          : "bg-transparent"
+          ? "bg-white/95 backdrop-blur-md shadow-md border-charcoal/10"
+          : "bg-white border-charcoal/5"
       )}
     >
       <nav
@@ -60,7 +60,7 @@ export function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="px-4 py-2 text-sm font-medium text-cream/80 hover:text-gold transition-colors rounded-md"
+                className="px-4 py-2 text-sm font-medium text-charcoal hover:text-gold transition-colors rounded-md"
               >
                 {item.label}
               </Link>
@@ -76,7 +76,7 @@ export function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-cream/80 hover:text-gold transition-colors"
+            className="lg:hidden p-2 text-charcoal hover:text-gold transition-colors"
             aria-label={isOpen ? "Close menu" : "Open menu"}
             aria-expanded={isOpen}
           >
@@ -88,7 +88,7 @@ export function Navbar() {
       {/* Mobile Menu */}
       <div
         className={cn(
-          "lg:hidden fixed inset-0 top-20 bg-slate-dark/98 backdrop-blur-lg transition-all duration-300 z-40",
+          "lg:hidden fixed inset-0 top-20 bg-white/98 backdrop-blur-lg transition-all duration-300 z-40",
           isOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
@@ -100,7 +100,7 @@ export function Navbar() {
               key={item.href}
               href={item.href}
               onClick={() => setIsOpen(false)}
-              className="px-4 py-3 text-lg font-medium text-cream/80 hover:text-gold hover:bg-white/5 rounded-lg transition-colors"
+              className="px-4 py-3 text-lg font-medium text-charcoal hover:text-gold hover:bg-charcoal/5 rounded-lg transition-colors"
             >
               {item.label}
             </Link>
