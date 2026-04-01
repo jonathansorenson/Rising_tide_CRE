@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft, Calendar, User, Tag, Clock } from "lucide-react";
 import { BreadcrumbJsonLd, JsonLd } from "@/components/seo/JsonLd";
 import { generatePageMetadata } from "@/lib/seo";
@@ -27,6 +28,8 @@ const legacyPosts: Record<
     author: string;
     date: string;
     dateISO: string;
+    image: string;
+    imageAlt: string;
   }
 > = {
   "palm-beach-market-q1-2026": {
@@ -49,6 +52,8 @@ const legacyPosts: Record<
     author: "Rising Tide CRE",
     date: "March 2026",
     dateISO: "2026-03-01",
+    image: "/images/insights/palm-beach-market-q1-2026.jpg",
+    imageAlt: "Aerial view of Palm Beach County waterfront high-rise buildings",
   },
   "why-vertical-integration-matters": {
     title: "Why Vertical Integration Matters in CRE",
@@ -70,6 +75,8 @@ const legacyPosts: Record<
     author: "Rising Tide CRE",
     date: "February 2026",
     dateISO: "2026-02-15",
+    image: "/images/insights/why-vertical-integration-matters.jpg",
+    imageAlt: "Modern open-plan office interior representing integrated CRE operations",
   },
   "life-at-rising-tide": {
     title: "Life at Rising Tide: Building a Career in CRE",
@@ -91,6 +98,8 @@ const legacyPosts: Record<
     author: "Jonathan Sorenson",
     date: "January 2026",
     dateISO: "2026-01-20",
+    image: "/images/insights/life-at-rising-tide.jpg",
+    imageAlt: "Team collaborating around a conference table in a modern office",
   },
 };
 
@@ -323,6 +332,7 @@ export default function InsightPostPage({
           },
           datePublished: post.dateISO,
           mainEntityOfPage: `${SITE_CONFIG.url}/insights/${params.slug}`,
+          image: `${SITE_CONFIG.url}${post.image}`,
         }}
       />
 
@@ -357,6 +367,22 @@ export default function InsightPostPage({
                 <Calendar className="w-4 h-4" />
                 {post.date}
               </span>
+            </div>
+          </div>
+        </section>
+
+        {/* Hero Image */}
+        <section className="bg-white pt-8">
+          <div className="container-narrow mx-auto">
+            <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden">
+              <Image
+                src={post.image}
+                alt={post.imageAlt}
+                fill
+                className="object-cover"
+                priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1100px"
+              />
             </div>
           </div>
         </section>

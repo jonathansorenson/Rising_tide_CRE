@@ -21,7 +21,8 @@ const legacyPosts = [
     author: "Rising Tide CRE",
     date: "March 2026",
     readTime: "5 min read",
-    image: null,
+    image: "/images/insights/palm-beach-market-q1-2026.jpg",
+    imageAlt: "Aerial view of Palm Beach County waterfront high-rise buildings",
   },
   {
     slug: "why-vertical-integration-matters",
@@ -32,7 +33,8 @@ const legacyPosts = [
     author: "Nicholas White",
     date: "February 2026",
     readTime: "7 min read",
-    image: null,
+    image: "/images/insights/why-vertical-integration-matters.jpg",
+    imageAlt: "Modern open-plan office interior representing integrated CRE operations",
   },
   {
     slug: "life-at-rising-tide",
@@ -43,7 +45,8 @@ const legacyPosts = [
     author: "Jonathan Sorenson",
     date: "January 2026",
     readTime: "4 min read",
-    image: null,
+    image: "/images/insights/life-at-rising-tide.jpg",
+    imageAlt: "Team collaborating around a conference table in a modern office",
   },
 ];
 
