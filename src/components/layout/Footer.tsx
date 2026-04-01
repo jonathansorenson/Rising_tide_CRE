@@ -14,9 +14,9 @@ export function Footer() {
               <Image
                 src="/logos/RT_PrimaryB 2000x600.png"
                 alt="Rising Tide CRE"
-                width={240}
-                height={72}
-                className="h-14 w-auto mb-4"
+                width={280}
+                height={84}
+                className="h-16 w-auto mb-6"
               />
             </Link>
             <p className="text-sm leading-relaxed mt-4">
