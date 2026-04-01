@@ -267,6 +267,9 @@ export default function InsightPostPage({
                         [rehypeAutolinkHeadings, { behavior: "wrap" }],
                       ],
                     },
+                    // All MDX content is first-party (authored by us), so JS
+                    // expressions like stats={[...]} are safe to evaluate.
+                    blockJS: false,
                   }}
                 />
               </div>
