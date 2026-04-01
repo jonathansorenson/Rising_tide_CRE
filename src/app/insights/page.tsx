@@ -70,7 +70,7 @@ export default function InsightsPage() {
   // Build category list from both sources
   const mdxCategories = mdxPosts.map((p) => p.category);
   const legacyCategories = legacyPosts.map((p) => p.category);
-  const uniqueCategories = ["All", ...new Set([...mdxCategories, ...legacyCategories])];
+  const uniqueCategories = ["All"].concat(Array.from(new Set(mdxCategories.concat(legacyCategories))));
 
   return (
     <>

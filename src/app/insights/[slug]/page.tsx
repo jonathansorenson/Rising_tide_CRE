@@ -98,7 +98,7 @@ const legacyPosts: Record<
 export function generateStaticParams() {
   const mdxSlugs = getAllInsightSlugs();
   const legacySlugs = Object.keys(legacyPosts);
-  const allSlugs = [...new Set([...mdxSlugs, ...legacySlugs])];
+  const allSlugs = Array.from(new Set(mdxSlugs.concat(legacySlugs)));
   return allSlugs.map((slug) => ({ slug }));
 }
 
