@@ -49,7 +49,7 @@ const legacyPosts: Record<
       <p>Rising Tide CRE remains bullish on Palm Beach County's commercial real estate trajectory. The combination of wealth migration, population influx, infrastructure investment, and constrained supply creates a favorable environment for operators who understand these markets at the ground level.</p>
     `,
     category: "Market Update",
-    author: "Rising Tide CRE",
+    author: "Jonathan Sorenson",
     date: "March 2026",
     dateISO: "2026-03-01",
     image: "/images/insights/palm-beach-market-q1-2026.jpg",
@@ -72,7 +72,7 @@ const legacyPosts: Record<
       <p>Each service line makes the others stronger. Management insights improve acquisitions. Acquisition activity creates management opportunities. Leasing relationships inform both. Over time, this creates a compounding information advantage that simply cannot be replicated by firms operating in a single lane.</p>
     `,
     category: "Thought Leadership",
-    author: "Rising Tide CRE",
+    author: "Nicholas West",
     date: "February 2026",
     dateISO: "2026-02-15",
     image: "/images/insights/why-vertical-integration-matters.jpg",

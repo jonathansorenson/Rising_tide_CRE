@@ -18,7 +18,7 @@ const legacyPosts = [
     excerpt:
       "Population growth, wealth migration, and commercial real estate trends across Palm Beach County heading into 2026.",
     category: "Market Update",
-    author: "Rising Tide CRE",
+    author: "Jonathan Sorenson",
     date: "March 2026",
     readTime: "5 min read",
     image: "/images/insights/palm-beach-market-q1-2026.jpg",
@@ -30,7 +30,7 @@ const legacyPosts = [
     excerpt:
       "How combining property management, acquisitions, and leasing under one roof creates an information advantage and better outcomes for all stakeholders.",
     category: "Thought Leadership",
-    author: "Nicholas White",
+    author: "Nicholas West",
     date: "February 2026",
     readTime: "7 min read",
     image: "/images/insights/why-vertical-integration-matters.jpg",
