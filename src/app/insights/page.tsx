@@ -1,14 +1,17 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Hero } from "@/components/sections/Hero";
 import { CTABanner } from "@/components/sections/CTABanner";
 import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { generatePageMetadata, PAGE_SEO } from "@/lib/seo";
-import { Calendar, User, ArrowRight, Tag } from "lucide-react";
+import { Calendar, User, ArrowRight, Tag, Clock } from "lucide-react";
+import { getAllInsights, calculateReadingTime } from "@/lib/mdx/loader";
+import { CATEGORY_CONFIG } from "@/lib/mdx/config";
 
 export const metadata = generatePageMetadata(PAGE_SEO.insights);
 
-// Placeholder blog posts — will be replaced with MDX content
-const posts = [
+// Legacy hardcoded posts (kept until migrated to MDX)
+const legacyPosts = [
   {
     slug: "palm-beach-market-q1-2026",
     title: "Palm Beach County Market Update: Q1 2026",
@@ -18,6 +21,7 @@ const posts = [
     author: "Rising Tide CRE",
     date: "March 2026",
     readTime: "5 min read",
+    image: null,
   },
   {
     slug: "why-vertical-integration-matters",
@@ -28,6 +32,7 @@ const posts = [
     author: "Nicholas White",
     date: "February 2026",
     readTime: "7 min read",
+    image: null,
   },
   {
     slug: "life-at-rising-tide",
@@ -38,12 +43,35 @@ const posts = [
     author: "Jonathan Sorenson",
     date: "January 2026",
     readTime: "4 min read",
+    image: null,
   },
 ];
 
-const categories = ["All", "Market Update", "Thought Leadership", "Team Spotlight", "Deal Spotlight"];
-
 export default function InsightsPage() {
+  // Load MDX posts
+  const mdxPosts = getAllInsights().map((post) => ({
+    slug: post.slug,
+    title: post.frontmatter.title,
+    excerpt: post.frontmatter.description,
+    category: CATEGORY_CONFIG[post.frontmatter.category]?.label || post.frontmatter.category,
+    author: post.frontmatter.author,
+    date: new Date(post.frontmatter.date).toLocaleDateString("en-US", {
+      month: "long",
+      year: "numeric",
+    }),
+    readTime: `${post.frontmatter.readingTime || calculateReadingTime(post.content)} min read`,
+    image: post.frontmatter.image,
+    imageAlt: post.frontmatter.imageAlt,
+  }));
+
+  // Combine MDX + legacy (MDX first since they're newer)
+  const allPosts = [...mdxPosts, ...legacyPosts];
+
+  // Build category list from both sources
+  const mdxCategories = mdxPosts.map((p) => p.category);
+  const legacyCategories = legacyPosts.map((p) => p.category);
+  const uniqueCategories = ["All", ...new Set([...mdxCategories, ...legacyCategories])];
+
   return (
     <>
       <BreadcrumbJsonLd
@@ -62,9 +90,9 @@ export default function InsightsPage() {
 
       <section className="section-padding bg-white">
         <div className="container-wide mx-auto">
-          {/* Category Filter (static for now) */}
+          {/* Category Filter */}
           <div className="flex flex-wrap gap-2 mb-10">
-            {categories.map((cat) => (
+            {uniqueCategories.map((cat) => (
               <span
                 key={cat}
                 className={`px-4 py-2 text-sm font-medium rounded-full transition-all cursor-pointer ${
@@ -80,14 +108,26 @@ export default function InsightsPage() {
 
           {/* Posts Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {posts.map((post) => (
+            {allPosts.map((post) => (
               <article
                 key={post.slug}
                 className="group bg-white rounded-xl overflow-hidden shadow-sm border border-charcoal/5 hover:shadow-lg hover:border-gold/30 transition-all"
               >
-                {/* Image placeholder */}
-                <div className="aspect-[16/9] bg-gradient-to-br from-slate/70 to-slate-light flex items-center justify-center">
-                  <span className="text-cream/30 text-sm">Article Image</span>
+                {/* Image */}
+                <div className="aspect-[16/9] bg-gradient-to-br from-slate/70 to-slate-light relative overflow-hidden">
+                  {post.image ? (
+                    <Image
+                      src={post.image}
+                      alt={post.imageAlt || post.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                  ) : (
+                    <div className="flex items-center justify-center h-full">
+                      <span className="text-cream/30 text-sm">Article Image</span>
+                    </div>
+                  )}
                 </div>
 
                 <div className="p-6">
@@ -96,15 +136,14 @@ export default function InsightsPage() {
                       <Tag className="w-3 h-3" />
                       {post.category}
                     </span>
-                    <span className="text-xs text-charcoal-light">
+                    <span className="inline-flex items-center gap-1 text-xs text-charcoal-light">
+                      <Clock className="w-3 h-3" />
                       {post.readTime}
                     </span>
                   </div>
 
                   <h2 className="text-lg font-semibold text-slate-dark group-hover:text-gold transition-colors line-clamp-2">
-                    <Link href={`/insights/${post.slug}`}>
-                      {post.title}
-                    </Link>
+                    <Link href={`/insights/${post.slug}`}>{post.title}</Link>
                   </h2>
 
                   <p className="mt-2 text-sm text-charcoal-light leading-relaxed line-clamp-3">

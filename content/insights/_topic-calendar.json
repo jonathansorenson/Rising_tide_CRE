@@ -1,0 +1,159 @@
+{
+  "description": "Rolling SEO content calendar for Rising Tide Insights. The scheduled task pulls from this pool, rotating through categories to maintain topical diversity. Each topic includes target keywords and a brief for the AI writer.",
+  "rotation_order": [
+    "operations",
+    "energy-efficiency",
+    "leasing",
+    "market-intelligence",
+    "technology",
+    "asset-management",
+    "sustainability",
+    "tenant-experience"
+  ],
+  "topics": [
+    {
+      "category": "operations",
+      "title": "Predictive Maintenance in South Florida Office Buildings: Moving Beyond Break-Fix",
+      "keywords": ["predictive maintenance commercial building", "office building maintenance palm beach", "CMMS commercial real estate", "preventive vs predictive maintenance CRE"],
+      "brief": "Explore how IoT sensors and CMMS platforms are enabling predictive maintenance in Class A/B office buildings. Reference South Florida climate challenges (humidity, salt air, hurricane prep). Include ROI data on reduced emergency repairs and extended equipment life."
+    },
+    {
+      "category": "energy-efficiency",
+      "title": "FPL Rate Changes and What They Mean for Industrial Property Owners",
+      "keywords": ["FPL commercial rate 2026", "industrial energy costs florida", "demand charges commercial building", "utility cost reduction industrial"],
+      "brief": "Analyze recent FPL rate schedule changes and their impact on industrial property operating expenses. Cover demand charge optimization, peak shaving strategies, and solar+storage economics for warehouse/flex space."
+    },
+    {
+      "category": "leasing",
+      "title": "Industrial Lease Structures That Actually Work in 2026",
+      "keywords": ["industrial lease structure florida", "NNN lease industrial property", "warehouse lease terms south florida", "industrial leasing palm beach county"],
+      "brief": "Break down current best practices for industrial lease structures in South Florida. Cover NNN vs modified gross, TI allowances for distribution vs flex, escalation structures, and early termination provisions."
+    },
+    {
+      "category": "market-intelligence",
+      "title": "Palm Beach County Office Absorption: Q1 2026 in Focus",
+      "keywords": ["palm beach county office market Q1 2026", "office absorption south florida", "commercial real estate market report palm beach", "office vacancy rate palm beach"],
+      "brief": "Quarterly market update on Palm Beach County office absorption, vacancy, and rental rate trends. Compare submarket performance (downtown WPB vs Boca vs Jupiter). Include forward-looking indicators."
+    },
+    {
+      "category": "technology",
+      "title": "Smart Building ROI: What the Data Actually Shows After 3 Years",
+      "keywords": ["smart building ROI", "building automation system commercial", "IoT commercial real estate", "proptech ROI south florida"],
+      "brief": "Move beyond vendor marketing claims and look at real-world ROI data from smart building deployments in office and industrial properties. Cover BAS integration, occupancy analytics, and energy management platforms."
+    },
+    {
+      "category": "asset-management",
+      "title": "Value-Add Playbook: Repositioning Class B Office in South Florida",
+      "keywords": ["value add office building florida", "office repositioning strategy", "Class B office renovation CRE", "NOI improvement commercial property"],
+      "brief": "Tactical guide to repositioning Class B office assets in the South Florida market. Cover amenity upgrades, lobby renovations, spec suite programs, and the financial modeling behind renovation decisions."
+    },
+    {
+      "category": "sustainability",
+      "title": "Hurricane Season Prep Meets ESG: Climate Resilience for CRE Portfolios",
+      "keywords": ["hurricane preparedness commercial building florida", "climate resilience CRE", "ESG climate risk commercial real estate", "building resilience south florida"],
+      "brief": "Connect hurricane season preparedness with ESG reporting and climate resilience strategy. Cover insurance implications, physical risk assessment, hardening investments, and how institutional investors are evaluating climate exposure."
+    },
+    {
+      "category": "tenant-experience",
+      "title": "What Office Tenants in Palm Beach Actually Want in 2026",
+      "keywords": ["office tenant preferences 2026", "workplace amenities south florida", "tenant retention commercial real estate", "office tenant experience palm beach"],
+      "brief": "Data-driven look at tenant preferences in the Palm Beach County office market. Cover hybrid work impact on space needs, amenity expectations, parking ratios, and what's driving lease renewals vs relocations."
+    },
+    {
+      "category": "operations",
+      "title": "Vendor Management for Multi-Tenant Office: Contracts, KPIs, and Accountability",
+      "keywords": ["vendor management commercial property", "property management vendor contracts", "office building vendor KPIs", "outsourced maintenance CRE"],
+      "brief": "Best practices for managing the vendor ecosystem in multi-tenant office properties. Cover contract structures, performance metrics, bid processes, and technology for vendor accountability."
+    },
+    {
+      "category": "energy-efficiency",
+      "title": "Solar + Storage Economics for South Florida Industrial Properties",
+      "keywords": ["solar panel industrial building florida", "battery storage commercial property", "solar ROI industrial south florida", "renewable energy CRE florida"],
+      "brief": "Financial analysis of rooftop solar and battery storage for industrial/warehouse properties in South Florida. Cover current incentives, net metering rules, payback periods, and lease vs PPA structures."
+    },
+    {
+      "category": "leasing",
+      "title": "The Office Lease Negotiation Playbook: Landlord Strategies for a Tenant-Favorable Market",
+      "keywords": ["office lease negotiation landlord", "commercial lease strategy south florida", "tenant concession office CRE", "lease negotiation commercial real estate"],
+      "brief": "Landlord-side strategies for office lease negotiations in the current market. Cover concession packages, free rent structures, TI amortization, and how to maintain effective rent while staying competitive."
+    },
+    {
+      "category": "market-intelligence",
+      "title": "South Florida Industrial: Why Last-Mile Logistics Is Reshaping the Market",
+      "keywords": ["south florida industrial market", "last mile logistics florida", "warehouse demand palm beach", "industrial real estate trends 2026"],
+      "brief": "Analysis of how e-commerce and last-mile logistics demand is reshaping South Florida's industrial market. Cover rental rate trends, land scarcity, conversion activity, and emerging submarkets."
+    },
+    {
+      "category": "technology",
+      "title": "AI-Powered Lease Abstraction: How It Works and Why It Matters",
+      "keywords": ["AI lease abstraction", "commercial lease technology", "proptech lease management", "automated lease review CRE"],
+      "brief": "Explain how AI-powered lease abstraction tools work and their practical application for CRE operators. Cover accuracy benchmarks, integration with property management systems, and time savings."
+    },
+    {
+      "category": "asset-management",
+      "title": "Cap Rate Compression in South Florida: What It Means for Your Hold Strategy",
+      "keywords": ["cap rate south florida CRE", "commercial real estate cap rates 2026", "hold strategy commercial property", "exit strategy CRE south florida"],
+      "brief": "Analyze current cap rate trends across South Florida office and industrial assets. Cover implications for hold vs sell decisions, refinancing opportunities, and value creation in a compressed-cap environment."
+    },
+    {
+      "category": "sustainability",
+      "title": "Water Conservation Strategies for Commercial Properties in South Florida",
+      "keywords": ["water conservation commercial building florida", "water efficiency CRE", "sustainable water management property", "utility cost water commercial building"],
+      "brief": "Practical water conservation strategies for office and industrial properties in the South Florida water district. Cover irrigation optimization, low-flow fixtures, cooling tower management, and stormwater recapture."
+    },
+    {
+      "category": "tenant-experience",
+      "title": "Building a Tenant Retention Program That Actually Moves the Needle",
+      "keywords": ["tenant retention program CRE", "commercial tenant retention strategies", "reduce tenant turnover office", "tenant relationship management"],
+      "brief": "Operational framework for tenant retention in office properties. Cover early renewal engagement, satisfaction surveys, amenity programming, communication cadence, and measuring retention ROI."
+    },
+    {
+      "category": "operations",
+      "title": "After the Storm: Commercial Property Recovery Timelines and Best Practices",
+      "keywords": ["hurricane damage commercial property florida", "storm recovery commercial building", "property damage restoration CRE", "emergency response commercial property"],
+      "brief": "Post-hurricane recovery playbook for commercial property owners and managers. Cover immediate assessment, insurance claim timelines, restoration vendor selection, tenant communication, and lessons from recent storms."
+    },
+    {
+      "category": "energy-efficiency",
+      "title": "LED Retrofit ROI: Updated Numbers for South Florida Office Owners",
+      "keywords": ["LED retrofit ROI commercial building", "office lighting upgrade cost", "LED conversion south florida", "energy savings LED commercial"],
+      "brief": "Updated financial analysis of LED retrofit projects for office buildings in South Florida. Cover current fixture costs, FPL rebate programs, payback periods by building type, and integration with BAS for daylight harvesting."
+    },
+    {
+      "category": "leasing",
+      "title": "Spec Suite Programs: How to De-Risk Office Leasing in a Competitive Market",
+      "keywords": ["spec suite office leasing", "turnkey office space south florida", "office lease up strategy", "spec suite ROI CRE"],
+      "brief": "Tactical guide to spec suite programs for office buildings. Cover design standards, cost per SF benchmarks, target tenant profiles, and conversion rate data from South Florida markets."
+    },
+    {
+      "category": "market-intelligence",
+      "title": "Insurance Costs Are Reshaping South Florida CRE: A Data-Driven Look",
+      "keywords": ["commercial property insurance florida 2026", "CRE insurance costs south florida", "property insurance impact cap rates", "commercial insurance market florida"],
+      "brief": "Deep dive into how rising property insurance costs are impacting CRE economics in South Florida. Cover rate trends by property type, impact on NOI and valuations, mitigation strategies, and the legislative landscape."
+    },
+    {
+      "category": "technology",
+      "title": "Cybersecurity for Smart Buildings: Protecting Your Connected Property",
+      "keywords": ["cybersecurity smart building", "building automation security CRE", "IoT security commercial property", "cybersecurity commercial real estate"],
+      "brief": "Address the growing cybersecurity risks in connected commercial buildings. Cover common vulnerabilities in BAS and IoT systems, best practices for network segmentation, and the insurance and liability implications."
+    },
+    {
+      "category": "asset-management",
+      "title": "Property Tax Appeals in Palm Beach County: Timing, Process, and Strategy",
+      "keywords": ["property tax appeal palm beach county", "commercial property tax protest florida", "property tax reduction strategy CRE", "palm beach county property appraiser"],
+      "brief": "Step-by-step guide to property tax appeals for commercial properties in Palm Beach County. Cover the appeal timeline, evidence preparation, VAB hearing process, and when to engage a tax consultant."
+    },
+    {
+      "category": "sustainability",
+      "title": "LEED Certification for Existing Buildings: Is It Worth It in South Florida?",
+      "keywords": ["LEED certification existing building", "LEED EB south florida", "green certification commercial property", "LEED ROI commercial real estate"],
+      "brief": "Cost-benefit analysis of pursuing LEED certification for existing office and industrial buildings in South Florida. Cover certification costs, operational requirements, tenant premium data, and alternatives like ENERGY STAR certification."
+    },
+    {
+      "category": "tenant-experience",
+      "title": "Designing Common Areas That Drive Lease Renewals",
+      "keywords": ["office common area design", "lobby renovation commercial building", "amenity space office CRE", "tenant amenity ROI"],
+      "brief": "How thoughtful common area design drives tenant satisfaction and lease renewals. Cover lobby renovations, fitness centers, outdoor spaces, conference centers, and ROI data from recent South Florida projects."
+    }
+  ]
+}

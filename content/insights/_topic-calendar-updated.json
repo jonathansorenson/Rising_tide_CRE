@@ -1,0 +1,64 @@
+{
+  "rotation_order": [
+    "operations",
+    "energy-efficiency",
+    "leasing",
+    "market-intelligence",
+    "technology",
+    "asset-management",
+    "sustainability",
+    "tenant-experience"
+  ],
+  "topics": [
+    {
+      "category": "operations",
+      "title": "Preventive Maintenance Programs That Cut Operating Costs for South Florida Office Buildings",
+      "slug": "preventive-maintenance-south-florida-office-buildings",
+      "status": "planned"
+    },
+    {
+      "category": "energy-efficiency",
+      "title": "Palm Beach Office Energy Benchmarks 2026",
+      "slug": "palm-beach-office-energy-benchmarks-2026",
+      "status": "published",
+      "published_date": "2026-03-31"
+    },
+    {
+      "category": "leasing",
+      "title": "Office Lease Negotiation in South Florida's Tightest Market",
+      "slug": "south-florida-office-lease-negotiation-strategies",
+      "status": "published",
+      "published_date": "2026-04-01"
+    },
+    {
+      "category": "market-intelligence",
+      "title": "South Florida Industrial Market: Where Vacancy Is Heading in 2026",
+      "slug": "south-florida-industrial-vacancy-outlook-2026",
+      "status": "planned"
+    },
+    {
+      "category": "technology",
+      "title": "Smart Building Technology ROI for Palm Beach County Office Owners",
+      "slug": "smart-building-technology-roi-palm-beach",
+      "status": "planned"
+    },
+    {
+      "category": "asset-management",
+      "title": "Capital Improvement Prioritization for Aging South Florida Office Assets",
+      "slug": "capital-improvement-aging-south-florida-office",
+      "status": "planned"
+    },
+    {
+      "category": "sustainability",
+      "title": "Hurricane Resilience as a Leasing Advantage in South Florida CRE",
+      "slug": "hurricane-resilience-leasing-advantage-south-florida",
+      "status": "planned"
+    },
+    {
+      "category": "tenant-experience",
+      "title": "What South Florida Office Tenants Actually Want in 2026",
+      "slug": "south-florida-office-tenant-expectations-2026",
+      "status": "planned"
+    }
+  ]
+}

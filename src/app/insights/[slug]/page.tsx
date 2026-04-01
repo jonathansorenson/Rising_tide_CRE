@@ -1,23 +1,39 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, Calendar, User, Tag } from "lucide-react";
+import Image from "next/image";
+import { ArrowLeft, Calendar, User, Tag, Clock } from "lucide-react";
 import { BreadcrumbJsonLd, JsonLd } from "@/components/seo/JsonLd";
 import { generatePageMetadata } from "@/lib/seo";
 import { SITE_CONFIG } from "@/lib/constants";
+import {
+  getAllInsightSlugs,
+  getInsightBySlug,
+  calculateReadingTime,
+} from "@/lib/mdx/loader";
+import { CATEGORY_CONFIG } from "@/lib/mdx/config";
+import { MDXRemote } from "next-mdx-remote/rsc";
+import { mdxComponents } from "@/components/mdx/MdxComponents";
+import remarkGfm from "remark-gfm";
+import rehypeSlug from "rehype-slug";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
-// Placeholder posts — will be replaced with MDX
-const posts: Record<string, {
-  title: string;
-  excerpt: string;
-  content: string;
-  category: string;
-  author: string;
-  date: string;
-  dateISO: string;
-}> = {
+// ── Legacy hardcoded posts (kept for backward compat) ────────
+const legacyPosts: Record<
+  string,
+  {
+    title: string;
+    excerpt: string;
+    content: string;
+    category: string;
+    author: string;
+    date: string;
+    dateISO: string;
+  }
+> = {
   "palm-beach-market-q1-2026": {
     title: "Palm Beach County Market Update: Q1 2026",
-    excerpt: "Population growth, wealth migration, and commercial real estate trends across Palm Beach County heading into 2026.",
+    excerpt:
+      "Population growth, wealth migration, and commercial real estate trends across Palm Beach County heading into 2026.",
     content: `
       <p>The Palm Beach County commercial real estate market continues to demonstrate exceptional momentum heading into 2026. Driven by sustained wealth migration, business relocations, and infrastructure investment, the fundamentals across Palm Beach County's commercial property sectors remain compelling.</p>
 
@@ -37,7 +53,8 @@ const posts: Record<string, {
   },
   "why-vertical-integration-matters": {
     title: "Why Vertical Integration Matters in CRE",
-    excerpt: "How combining property management, acquisitions, and leasing under one roof creates an information advantage.",
+    excerpt:
+      "How combining property management, acquisitions, and leasing under one roof creates an information advantage.",
     content: `
       <p>In commercial real estate, most firms specialize. Management companies manage. Brokerage firms broker. Investment shops invest. At Rising Tide CRE, we believe this siloed approach leaves value on the table.</p>
 
@@ -57,7 +74,8 @@ const posts: Record<string, {
   },
   "life-at-rising-tide": {
     title: "Life at Rising Tide: Building a Career in CRE",
-    excerpt: "What it's like to work at a vertically integrated CRE firm in South Florida's Palm Beach County.",
+    excerpt:
+      "What it's like to work at a vertically integrated CRE firm in South Florida's Palm Beach County.",
     content: `
       <p>When I joined Rising Tide CRE, I expected a focused role in operations. What I found was something different — an environment where every team member gets exposure to the full spectrum of commercial real estate, from underwriting potential acquisitions to managing tenant relationships to supporting leasing efforts.</p>
 
@@ -77,28 +95,206 @@ const posts: Record<string, {
   },
 };
 
+// ── Static params for both MDX + legacy posts ────────────────
 export function generateStaticParams() {
-  return Object.keys(posts).map((slug) => ({ slug }));
+  const mdxSlugs = getAllInsightSlugs();
+  const legacySlugs = Object.keys(legacyPosts);
+  const allSlugs = [...new Set([...mdxSlugs, ...legacySlugs])];
+  return allSlugs.map((slug) => ({ slug }));
 }
 
+// ── Metadata ─────────────────────────────────────────────────
 export function generateMetadata({ params }: { params: { slug: string } }) {
-  const post = posts[params.slug];
-  if (!post) return {};
-  return generatePageMetadata({
-    title: post.title,
-    description: post.excerpt,
-    path: `/insights/${params.slug}`,
-    type: "article",
-    publishedTime: post.dateISO,
-    author: post.author,
-    keywords: [post.category, "Rising Tide CRE", "Palm Beach County CRE"],
-  });
+  const mdxPost = getInsightBySlug(params.slug);
+  if (mdxPost) {
+    const fm = mdxPost.frontmatter;
+    return generatePageMetadata({
+      title: fm.title,
+      description: fm.description,
+      path: `/insights/${params.slug}`,
+      type: "article",
+      publishedTime: fm.date,
+      modifiedTime: fm.lastModified,
+      author: fm.author,
+      keywords: fm.keywords,
+    });
+  }
+
+  const legacy = legacyPosts[params.slug];
+  if (legacy) {
+    return generatePageMetadata({
+      title: legacy.title,
+      description: legacy.excerpt,
+      path: `/insights/${params.slug}`,
+      type: "article",
+      publishedTime: legacy.dateISO,
+      author: legacy.author,
+      keywords: [legacy.category, "Rising Tide CRE", "Palm Beach County CRE"],
+    });
+  }
+
+  return {};
 }
 
-export default function InsightPostPage({ params }: { params: { slug: string } }) {
-  const post = posts[params.slug];
-  if (!post) notFound();
+// ── Page component ───────────────────────────────────────────
+export default function InsightPostPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const mdxPost = getInsightBySlug(params.slug);
+  const legacy = legacyPosts[params.slug];
 
+  if (!mdxPost && !legacy) notFound();
+
+  // ── MDX article ──
+  if (mdxPost) {
+    const fm = mdxPost.frontmatter;
+    const categoryConfig = CATEGORY_CONFIG[fm.category];
+    const readTime = fm.readingTime || calculateReadingTime(mdxPost.content);
+
+    return (
+      <>
+        <BreadcrumbJsonLd
+          items={[
+            { name: "Home", href: "/" },
+            { name: "Insights", href: "/insights" },
+            { name: fm.title, href: `/insights/${params.slug}` },
+          ]}
+        />
+        <JsonLd
+          data={{
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: fm.title,
+            description: fm.description,
+            author: { "@type": "Person", name: fm.author },
+            publisher: {
+              "@type": "Organization",
+              name: SITE_CONFIG.name,
+              logo: {
+                "@type": "ImageObject",
+                url: `${SITE_CONFIG.url}/logos/RT_Icon 1000x1000.png`,
+              },
+            },
+            datePublished: fm.date,
+            ...(fm.lastModified && { dateModified: fm.lastModified }),
+            mainEntityOfPage: `${SITE_CONFIG.url}/insights/${params.slug}`,
+            image: fm.image ? `${SITE_CONFIG.url}${fm.image}` : undefined,
+            keywords: fm.keywords?.join(", "),
+          }}
+        />
+
+        <article>
+          {/* Header */}
+          <section className="pt-28 pb-16 bg-slate-dark">
+            <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8">
+              <Link
+                href="/insights"
+                className="inline-flex items-center gap-2 text-cream/60 hover:text-gold text-sm mb-8 transition-colors"
+              >
+                <ArrowLeft className="w-4 h-4" />
+                Back to Insights
+              </Link>
+
+              <div className="flex items-center gap-3 mb-4">
+                <span
+                  className="inline-flex items-center gap-1 px-3 py-1 text-xs font-medium rounded-full"
+                  style={{
+                    backgroundColor: `${categoryConfig?.color || "#0EA5E9"}20`,
+                    color: categoryConfig?.color || "#0EA5E9",
+                  }}
+                >
+                  <Tag className="w-3 h-3" />
+                  {categoryConfig?.label || fm.category}
+                </span>
+                <span className="inline-flex items-center gap-1 text-cream/50 text-xs">
+                  <Clock className="w-3 h-3" />
+                  {readTime} min read
+                </span>
+              </div>
+
+              <h1 className="text-display-sm md:text-display-md font-display text-cream leading-tight">
+                {fm.title}
+              </h1>
+
+              <p className="mt-4 text-lg text-cream/70 max-w-2xl">
+                {fm.description}
+              </p>
+
+              <div className="flex items-center gap-4 mt-6 text-cream/60 text-sm">
+                <span className="inline-flex items-center gap-1.5">
+                  <User className="w-4 h-4" />
+                  {fm.author}
+                </span>
+                <span className="inline-flex items-center gap-1.5">
+                  <Calendar className="w-4 h-4" />
+                  {new Date(fm.date).toLocaleDateString("en-US", {
+                    month: "long",
+                    day: "numeric",
+                    year: "numeric",
+                  })}
+                </span>
+              </div>
+
+              {/* Tags */}
+              {fm.tags && fm.tags.length > 0 && (
+                <div className="flex flex-wrap gap-2 mt-6">
+                  {fm.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-2.5 py-0.5 text-xs text-cream/40 bg-cream/5 rounded-full"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
+          </section>
+
+          {/* MDX Content */}
+          <section className="section-padding bg-white">
+            <div className="container-narrow mx-auto">
+              <div className="prose prose-lg max-w-none text-charcoal-light leading-relaxed prose-headings:text-slate-dark prose-headings:font-display prose-headings:mt-12 prose-headings:mb-4 prose-p:mb-6 prose-a:text-gold prose-a:no-underline hover:prose-a:underline prose-img:rounded-xl">
+                <MDXRemote
+                  source={mdxPost.content}
+                  components={mdxComponents}
+                  options={{
+                    mdxOptions: {
+                      remarkPlugins: [remarkGfm],
+                      rehypePlugins: [
+                        rehypeSlug,
+                        [rehypeAutolinkHeadings, { behavior: "wrap" }],
+                      ],
+                    },
+                  }}
+                />
+              </div>
+
+              {/* Author Card */}
+              <div className="mt-16 pt-8 border-t border-charcoal/10">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center">
+                    <User className="w-6 h-6 text-gold" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-slate-dark">{fm.author}</p>
+                    <p className="text-sm text-charcoal-light">
+                      {fm.authorTitle || "Rising Tide CRE"}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </article>
+      </>
+    );
+  }
+
+  // ── Legacy article (fallback) ──
+  const post = legacy!;
   return (
     <>
       <BreadcrumbJsonLd
@@ -118,7 +314,10 @@ export default function InsightPostPage({ params }: { params: { slug: string } }
           publisher: {
             "@type": "Organization",
             name: SITE_CONFIG.name,
-            logo: { "@type": "ImageObject", url: `${SITE_CONFIG.url}/logos/RT_Icon 1000x1000.png` },
+            logo: {
+              "@type": "ImageObject",
+              url: `${SITE_CONFIG.url}/logos/RT_Icon 1000x1000.png`,
+            },
           },
           datePublished: post.dateISO,
           mainEntityOfPage: `${SITE_CONFIG.url}/insights/${params.slug}`,
@@ -126,7 +325,6 @@ export default function InsightPostPage({ params }: { params: { slug: string } }
       />
 
       <article>
-        {/* Header */}
         <section className="pt-28 pb-16 bg-slate-dark">
           <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8">
             <Link
@@ -161,7 +359,6 @@ export default function InsightPostPage({ params }: { params: { slug: string } }
           </div>
         </section>
 
-        {/* Content */}
         <section className="section-padding bg-white">
           <div className="container-narrow mx-auto">
             <div
@@ -172,7 +369,6 @@ export default function InsightPostPage({ params }: { params: { slug: string } }
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
 
-            {/* Author Card */}
             <div className="mt-16 pt-8 border-t border-charcoal/10">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center">
