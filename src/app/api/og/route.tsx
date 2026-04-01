@@ -6,7 +6,13 @@ export const runtime = "edge";
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const title = searchParams.get("title") || "Rising Tide CRE";
-  const subtitle = searchParams.get("subtitle") || "Real Assets. Real Operations. Real Results.";
+  const subtitle =
+    searchParams.get("subtitle") || "Real Assets. Real Operations. Real Results.";
+
+  // Fetch logo from same origin to embed in OG image
+  const logoUrl = new URL("/logos/RT_PrimaryB 2000x600.png", req.url).toString();
+  const logoData = await fetch(logoUrl).then((r) => r.arrayBuffer());
+  const logoBase64 = `data:image/png;base64,${Buffer.from(logoData).toString("base64")}`;
 
   return new ImageResponse(
     (
@@ -16,13 +22,13 @@ export async function GET(req: NextRequest) {
           width: "100%",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "flex-end",
+          justifyContent: "space-between",
           padding: "60px",
           background: "linear-gradient(135deg, #0F1923, #1B2A3D, #243447)",
           fontFamily: "system-ui, sans-serif",
         }}
       >
-        {/* Gold accent line */}
+        {/* Gold accent line — top */}
         <div
           style={{
             position: "absolute",
@@ -43,23 +49,23 @@ export async function GET(req: NextRequest) {
             width: "400px",
             height: "400px",
             borderRadius: "50%",
-            background: "rgba(200, 169, 110, 0.05)",
+            background: "rgba(200, 169, 110, 0.08)",
           }}
         />
 
-        <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-          <div
-            style={{
-              fontSize: "16px",
-              fontWeight: 600,
-              color: "#C8A96E",
-              letterSpacing: "3px",
-              textTransform: "uppercase",
-            }}
-          >
-            RISING TIDE CRE
-          </div>
+        {/* Logo — prominent at top */}
+        <div style={{ display: "flex" }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={logoBase64}
+            alt="Rising Tide CRE"
+            height={80}
+            style={{ height: "80px", width: "auto" }}
+          />
+        </div>
 
+        {/* Title + subtitle at bottom */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
           <div
             style={{
               fontSize: title.length > 40 ? "42px" : "56px",

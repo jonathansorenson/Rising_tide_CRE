@@ -49,10 +49,10 @@ export function Navbar() {
             <Image
               src="/logos/RT_Primary 2000x600.png"
               alt="Rising Tide CRE"
-              width={180}
-              height={54}
+              width={260}
+              height={78}
               priority
-              className="h-10 w-auto"
+              className="h-14 w-auto"
             />
           </Link>
 
