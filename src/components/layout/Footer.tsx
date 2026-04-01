@@ -12,7 +12,7 @@ export function Footer() {
           <div className="lg:col-span-1">
             <Link href="/" aria-label="Rising Tide CRE Home">
               <Image
-                src="/logos/RT_PrimaryB 2000x600.png"
+                src="/logos/RT_Primary 2000x600.png"
                 alt="Rising Tide CRE"
                 width={280}
                 height={84}
